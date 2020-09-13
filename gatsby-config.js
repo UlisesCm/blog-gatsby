@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Blog Ulises`,
     description: `Blog utilizando tecnologias como gatsby, react y strapi`,
-    author: `@gatsbyjs`,
+    author: `@UlisesCipres`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -15,6 +15,15 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-source-strapi`,
+      options: {
+        apiURL: `http://localhost:1337`,
+        queryLimit: 1000, // Default to 100
+        contentTypes: [`post`],
+      },
+    },
     /* {
       resolve: `gatsby-plugin-manifest`,
       options: {
