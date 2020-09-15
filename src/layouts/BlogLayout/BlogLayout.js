@@ -1,5 +1,6 @@
 import React from "react"
 import { Container, Grid } from "semantic-ui-react"
+import Menu from "../../components/Menu"
 import "./BlogLayout.scss"
 
 export default function BlogLayout(props) {
@@ -8,7 +9,7 @@ export default function BlogLayout(props) {
     <Container fluid className="blog-layout">
       <Grid>
         <Grid.Column mobile={16} tablet={16} computer={4}>
-          <h1>Menu</h1>
+          <Menu />
         </Grid.Column>
         <Grid.Column mobile={16} tablet={16} computer={12}>
           {children}
