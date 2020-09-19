@@ -33,8 +33,18 @@ exports.createPages = async ({ actions, graphql }) => {
   paginate({
     createPage,
     items: posts.data.allStrapiPost.nodes,
-    itemsPerPage: 12,
+    itemsPerPage: 5,
     pathPrefix: "/",
     component: path.resolve(`./src/templates/blog.js`),
+  })
+  //create post page
+  posts.data.allStrapiPost.nodes.forEach(post => {
+    createPage({
+      path: `/${post.url}`,
+      component: path.resolve(`src/templates/post/post.js`),
+      content: {
+        data: post,
+      },
+    })
   })
 }

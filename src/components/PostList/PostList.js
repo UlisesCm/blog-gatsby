@@ -2,11 +2,13 @@ import React from "react"
 import { Grid, Card, Icon, Image } from "semantic-ui-react"
 import { Link } from "gatsby"
 import { map } from "lodash"
+import moment from "moment"
+import "moment/locale/es"
 import "./PostList.scss"
 
 export default function PostList(props) {
   const { posts } = props
-  console.log(posts)
+
   return (
     <Grid className="post-list">
       {map(posts, post => (
@@ -18,7 +20,10 @@ export default function PostList(props) {
                 <Card.Header>{post.title}</Card.Header>
               </Card.Content>
               <Card.Content extra>
-                <Card.Meta> {post.createdAt}</Card.Meta>
+                <Card.Meta>
+                  <Icon name="calendar alternate outline" />
+                  {moment(post.createdAt).format("LL")}
+                </Card.Meta>
               </Card.Content>
             </Card>
           </Link>

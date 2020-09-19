@@ -1,6 +1,5 @@
 import electronReact from "../../images/electron-react.jpg"
 import instaclone from "../../images/instaclone.jpg"
-import javascript from "../../images/javascript-es6.jpg"
 import reactNativeCli from "../../images/react-native-cli.jpg"
 import reactNativeExpo from "../../images/react-native-expo.png"
 import redux from "../../images/react-redux-nextjs.jpg"
@@ -15,11 +14,6 @@ export default [
   {
     image: instaclone,
     title: "Instaclone",
-    url: "https://www.udemy.com/",
-  },
-  {
-    image: javascript,
-    title: "Javascript",
     url: "https://www.udemy.com/",
   },
   {
